@@ -1,0 +1,1 @@
+alias git-clean='git pull --rebase && git pull --prune && git branch --merged | grep -v "\*" | xargs -n 1 git branch -d'
