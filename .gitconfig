@@ -16,7 +16,7 @@
     st = status
     s = status -s
     ci = commit
-    cm = commi  t -m
+    cm = commit -m
     ca = commit --amend
     save = commit -am "SAVEPOINT"
     unstage = reset HEAD
