@@ -1,6 +1,6 @@
 [core]
     editor = vim
-    excludesfile = $HOME/.gitignore
+    excludesfile = ~/.gitignore
 
 # Please, specify this variables in ~/.gitconfig-local
 # it is included in the end of this file
@@ -16,7 +16,7 @@
     st = status
     s = status -s
     ci = commit
-    cm = commit -m
+    cm = commi  t -m
     ca = commit --amend
     save = commit -am "SAVEPOINT"
     unstage = reset HEAD
