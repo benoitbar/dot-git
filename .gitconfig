@@ -23,8 +23,10 @@
     undo = reset HEAD~
     br = branch
     co = checkout
+    cob = checkout -b
     lg = log --all --graph --pretty=format:'%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
     last = log -1 HEAD
+    publish = "!git push -u origin `git rev-parse --abbrev-ref HEAD`"
 
 [color]
     ui = auto
