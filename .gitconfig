@@ -1,6 +1,7 @@
 [core]
     editor = vim
     excludesfile = ~/.gitignore
+    pager = delta  # https://github.com/dandavison/delta
 
 # Please, specify this variables in ~/.gitconfig-local
 # it is included in the end of this file
@@ -18,12 +19,12 @@
     ci = commit
     cm = commit -m
     ca = commit --amend
-    save = commit -am "SAVEPOINT"
-    unstage = reset HEAD
+    save = commit -amn "SAVEPOINT"
+    unstage = restore --staged .
     undo = reset HEAD~
     br = branch
-    co = checkout
-    cob = checkout -b
+    sw = switch
+    swc = switch -c
     lg = log --all --graph --pretty=format:'%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
     last = log -1 HEAD
     publish = "!git push -u origin `git rev-parse --abbrev-ref HEAD`"
@@ -50,14 +51,25 @@
     changed = green
     untracked = cyan
 
+[delta]
+    navigate = true  # use n and N to move between diff sections
+    side-by-side = true
+
+[diff]
+    colorMoved = default
+
 [push]
     default = tracking
 
 [diff]
     compactionHeuristic = true
+    algorithm = histogram
 
 [include]
     path = ~/.gitconfig-local
-[merge "npm-merge-driver"]
-	name = automatically merge npm lockfiles
-	driver = npx npm-merge-driver merge %A %O %B %P
+
+[merge]
+    conflictstyle = diff3
+
+[init]
+    defaultBranch = main
