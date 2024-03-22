@@ -19,7 +19,7 @@
     ci = commit
     cm = commit -m
     ca = commit --amend
-    save = commit -amn "SAVEPOINT"
+    save = commit -am "SAVEPOINT" -n
     unstage = restore --staged .
     undo = reset HEAD~
     br = branch
