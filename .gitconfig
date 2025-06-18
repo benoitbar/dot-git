@@ -27,7 +27,7 @@
     swc = switch -c
     lg = log --all --graph --pretty=format:'%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
     last = log -1 HEAD
-    publish = "!git push -u origin `git rev-parse --abbrev-ref HEAD`"
+    publish = ![[ $(git rev-parse --abbrev-ref HEAD) != master ]] && [[ $(git rev-parse --abbrev-ref HEAD) != main ]] && git push -u origin `git rev-parse --abbrev-ref HEAD` || echo "Unable to publish on $(git rev-parse --abbrev-ref HEAD) branch"
 
 [color]
     ui = auto
