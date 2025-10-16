@@ -1,4 +1,4 @@
-#Dotfiler git config
+# Dotfiler git config
 
 This repository contains git config.
 It's purpose to be used as a repository for [dotfiler][].
